@@ -106,13 +106,3 @@ This dataset is released under the [CC BY-NC 4.0](https://creativecommons.org/li
 - You are free to share and adapt the data for **non-commercial** purposes.
 - You must give appropriate credit and indicate any changes made.
 
-If you use this dataset in your research, please cite:
-
-```bibtex
-@misc{eeg2vis2025,
-  title     = {EEG2VIS Benchmark: EEG-based Visualization Comprehension Dataset},
-  author    = {Shi Yao},
-  year      = {2025},
-  url       = {https://github.com/IatomicreactorI/EEG2VIS-benchmark}
-}
-```
