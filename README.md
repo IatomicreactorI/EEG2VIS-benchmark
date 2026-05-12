@@ -64,18 +64,6 @@ eeg_vis = trials[0]["vis"]  # shape: (31, 3000)
 print(f"Vis phase EEG shape: {eeg_vis.shape}")
 ```
 
-## Exploration Script
-
-Run the included `explore_data.py` to inspect the data:
-
-```bash
-# Explore the first file in detail
-python explore_data.py
-
-# Summarize all subjects
-python explore_data.py --all
-```
-
 ## License
 
 Please refer to the original dataset license and cite accordingly.
