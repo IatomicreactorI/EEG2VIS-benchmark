@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Indian Grand Prix', 'y_data': 1}, {'x_data': 'Bahrain Grand Prix', 'y_data': 2}, {'x_data': 'Canadian Grand Prix', 'y_data': 2}, {'x_data': 'Korean Grand Prix', 'y_data': 2}, {'x_data': 'Abu Dhabi Grand Prix', 'y_data': 3}, {'x_data': 'Australian Grand Prix', 'y_data': 3}, {'x_data': 'Belgian Grand Prix', 'y_data': 3}, {'x_data': 'Brazilian Grand Prix', 'y_data': 3}, {'x_data': 'British Grand Prix', 'y_data': 3}, {'x_data': 'Chinese Grand Prix', 'y_data': 3}, {'x_data': 'European Grand Prix', 'y_data': 3}, {'x_data': 'German Grand Prix', 'y_data': 3}, {'x_data': 'Hungarian Grand Prix', 'y_data': 3}, {'x_data': 'Italian Grand Prix', 'y_data': 3}, {'x_data': 'Japanese Grand Prix', 'y_data': 3}, {'x_data': 'Malaysian Grand Prix', 'y_data': 3}, {'x_data': 'Monaco Grand Prix', 'y_data': 3}, {'x_data': 'Singapore Grand Prix', 'y_data': 3}, {'x_data': 'Spanish Grand Prix', 'y_data': 3}, {'x_data': 'Turkish Grand Prix', 'y_data': 3}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'name', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(name)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

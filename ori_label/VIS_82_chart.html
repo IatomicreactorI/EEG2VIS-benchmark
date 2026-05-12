@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'KLR 284', 'y_data': 2}, {'x_data': 'DRE 156', 'y_data': 2}, {'x_data': 'DRE 102', 'y_data': 2}, {'x_data': 'KLR 409B', 'y_data': 1}, {'x_data': 'KLR 333', 'y_data': 1}, {'x_data': 'KLR 300', 'y_data': 1}, {'x_data': 'KLR 244', 'y_data': 1}, {'x_data': 'KLR 229D', 'y_data': 1}, {'x_data': 'KLR 211', 'y_data': 1}, {'x_data': 'KLR 203E', 'y_data': 1}, {'x_data': 'KLR 126', 'y_data': 1}, {'x_data': 'DRE 208', 'y_data': 1}, {'x_data': 'BBG 208', 'y_data': 1}, {'x_data': 'BBG 185', 'y_data': 1}, {'x_data': 'AAK 297', 'y_data': 1}, {'x_data': 'AAK 230', 'y_data': 1}, {'x_data': 'AAK 201', 'y_data': 1}, {'x_data': 'AAK 194', 'y_data': 1}, {'x_data': 'AAK 160', 'y_data': 1}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'PROF_OFFICE', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(PROF_OFFICE)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Laurent Capet', 'y_data': 202}, {'x_data': 'Stéphane Antiga', 'y_data': 200}, {'x_data': 'Dominique Daquin', 'y_data': 197}, {'x_data': 'Vincent Montméat', 'y_data': 196}, {'x_data': 'Guillaume Samica', 'y_data': 196}, {'x_data': 'Frantz Granvorka', 'y_data': 195}, {'x_data': 'Philippe Barça-Cysique', 'y_data': 194}, {'x_data': 'Loïc De Kergret', 'y_data': 193}, {'x_data': 'Hubert Henno', 'y_data': 188}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Name', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'Height'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

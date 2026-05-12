@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Sine Qua Non', 'y_data': 0, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Lewis', 'y_data': 3, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Carter', 'y_data': 2, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Paul Hobbs', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Morlet', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Janzen', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Hourglass', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Dos Lagos', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'David Arthur', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Darioush', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Chimeney Rock', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Chappellet', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Caymus', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Casa Piena', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Bucella', 'y_data': 1, 'classify': 'Cabernet Sauvingnon'}, {'x_data': 'Sine Qua Non', 'y_data': 2, 'classify': 'Grenache'}, {'x_data': 'Lewis', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Carter', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Paul Hobbs', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Morlet', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Janzen', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Hourglass', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Dos Lagos', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'David Arthur', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Darioush', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Chimeney Rock', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Chappellet', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Caymus', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Casa Piena', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Bucella', 'y_data': 0, 'classify': 'Grenache'}, {'x_data': 'Sine Qua Non', 'y_data': 2, 'classify': 'Syrah'}, {'x_data': 'Lewis', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Carter', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Paul Hobbs', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Morlet', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Janzen', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Hourglass', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Dos Lagos', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'David Arthur', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Darioush', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Chimeney Rock', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Chappellet', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Caymus', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Casa Piena', 'y_data': 0, 'classify': 'Syrah'}, {'x_data': 'Bucella', 'y_data': 0, 'classify': 'Syrah'}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Winery', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(Winery)'}, 'color': {'field': 'classify'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

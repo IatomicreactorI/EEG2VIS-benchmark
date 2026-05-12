@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Kearsley Urban District', 'y_data': 45}, {'x_data': 'Little Lever Urban District', 'y_data': 41}, {'x_data': 'Turton Urban District', 'y_data': 39}, {'x_data': 'Horwich Urban District', 'y_data': 33}, {'x_data': 'Blackrod Urban District', 'y_data': 32}, {'x_data': 'Bolton County Borough', 'y_data': 29}, {'x_data': 'Farnworth Municipal Borough', 'y_data': 26}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Hometown', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'Age'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

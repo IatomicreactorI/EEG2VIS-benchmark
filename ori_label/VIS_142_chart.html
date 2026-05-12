@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Purchasing Clerk', 'y_data': 2780}, {'x_data': 'Stock Clerk', 'y_data': 2785}, {'x_data': 'Shipping Clerk', 'y_data': 3215}, {'x_data': 'Administration Assistant', 'y_data': 4400}, {'x_data': 'Programmer', 'y_data': 5760}, {'x_data': 'Marketing Representative', 'y_data': 6000}, {'x_data': 'Human Resources Representative', 'y_data': 6500}, {'x_data': 'Stock Manager', 'y_data': 7280}, {'x_data': 'Accountant', 'y_data': 7920}, {'x_data': 'Public Accountant', 'y_data': 8300}, {'x_data': 'Sales Representative', 'y_data': 8350}, {'x_data': 'Public Relations Representative', 'y_data': 10000}, {'x_data': 'Purchasing Manager', 'y_data': 11000}, {'x_data': 'Accounting Manager', 'y_data': 12000}, {'x_data': 'Finance Manager', 'y_data': 12000}, {'x_data': 'Sales Manager', 'y_data': 12200}, {'x_data': 'Marketing Manager', 'y_data': 13000}, {'x_data': 'Administration Vice President', 'y_data': 17000}, {'x_data': 'President', 'y_data': 24000}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'JOB_TITLE', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'AVG(salary)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

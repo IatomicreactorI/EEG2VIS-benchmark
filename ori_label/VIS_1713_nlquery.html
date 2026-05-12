@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">For those employees whose first name is ending with the letter m, compute their average salary for visualizing a bar chart, and could you order mean salary in asc order please?</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT FIRST_NAME , AVG(SALARY) FROM employees WHERE first_name LIKE '%m' GROUP BY FIRST_NAME ORDER BY AVG(SALARY) ASC</p> -->

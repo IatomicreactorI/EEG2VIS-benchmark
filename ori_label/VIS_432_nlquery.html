@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">What is the total number of flags of ships that do not have a captain with the rank of Midshipman? Show the result using a bar chart, and rank by the X-axis in descending.</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT Flag , COUNT(Flag) FROM ship WHERE ship_id NOT IN (SELECT ship_id FROM captain WHERE rank = 'Midshipman') GROUP BY Flag ORDER BY Flag DESC</p> -->

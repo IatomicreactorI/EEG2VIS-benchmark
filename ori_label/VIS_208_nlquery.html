@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">what are the different card types, and how many transactions have been made with each?, show in ascending by the card_type_code please.</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT card_type_code , count(*) FROM Financial_transactions AS T1 JOIN Customers_cards AS T2 ON T1.card_id = T2.card_id GROUP BY T2.card_type_code ORDER BY card_type_code ASC</p> -->

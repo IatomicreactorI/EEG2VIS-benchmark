@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">Find the the customer details and id for the customers who had more than one policy. </div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT T1.Customer_Details , T1.Customer_ID FROM Customers AS T1 JOIN Customer_Policies AS T2 ON T1.Customer_id = T2.Customer_id</p> -->

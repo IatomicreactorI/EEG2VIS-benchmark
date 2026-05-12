@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">A stacked bar chart showing the number of faults for different fault short name and skills required to fix them The x-axis is skill description and group by fault short name, rank in asc by the bar.</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT skill_description , COUNT(skill_description) FROM Part_Faults AS T1 JOIN Skills_Required_To_Fix AS T2 ON T1.part_fault_id = T2.part_fault_id JOIN Skills AS T3 ON T2.skill_id = T3.skill_id GROUP BY fault_short_name ,  skill_description ORDER BY skill_description ASC</p> -->

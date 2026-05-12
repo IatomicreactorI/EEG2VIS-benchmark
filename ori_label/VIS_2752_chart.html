@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': '1789~1809', 'y_data': 10}, {'x_data': '1810~1830', 'y_data': 0}, {'x_data': '1831~1851', 'y_data': 10}, {'x_data': '1852~1872', 'y_data': 23}, {'x_data': '1873~1893', 'y_data': 77}, {'x_data': '1894~1914', 'y_data': 32.5}, {'x_data': '1915~1935', 'y_data': 0}, {'x_data': '1936~1956', 'y_data': 491}, {'x_data': '1957~1977', 'y_data': 41.666666666666664}, {'x_data': '1978~1998', 'y_data': 67.5}, {'x_data': '1999~2002', 'y_data': 44}]}, 'mark': {'type': 'line', 'interpolate': 'monotone'}, 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Creation', 'sort': 'ascending'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'AVG(Budget_in_Billions)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

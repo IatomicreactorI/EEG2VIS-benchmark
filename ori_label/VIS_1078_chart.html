@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'San José de Ocoa', 'y_data': 9.83}, {'x_data': 'Valverde', 'y_data': 9.73}, {'x_data': 'Distrito Nacional', 'y_data': 9.55}, {'x_data': 'Monte Plata', 'y_data': 9.51}, {'x_data': 'San Cristóbal', 'y_data': 9.05}, {'x_data': 'Santo Domingo Este', 'y_data': 8.99}, {'x_data': 'Santiago', 'y_data': 8.85}, {'x_data': 'La Vega', 'y_data': 8.82}, {'x_data': 'Duarte', 'y_data': 8.53}, {'x_data': 'Com. Dom. En Estados Unidos', 'y_data': 8.43}, {'x_data': 'Peravia', 'y_data': 8.33}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'donator_name', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'sum(amount)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

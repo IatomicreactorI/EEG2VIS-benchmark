@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 1, 'y_data': 601, 'classify': '20 Elkhart'}, {'x_data': 1, 'y_data': 852, 'classify': '46 LaPorte 71 St. Joseph'}, {'x_data': 3, 'y_data': 1098, 'classify': '50 Marshall'}, {'x_data': 2, 'y_data': 984, 'classify': '71 St. Joseph'}, {'x_data': 1, 'y_data': 620, 'classify': '75 Starke'}]}, 'mark': 'point', 'encoding': {'x': {'field': 'x_data', 'type': 'quantitative', 'title': 'count(*)', 'scale': {'zero': 'false'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'sum(enrollment)', 'scale': {'zero': 'false'}}, 'color': {'field': 'classify', 'type': 'nominal'}, 'shape': {'field': 'classify', 'type': 'nominal'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

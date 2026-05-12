@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 'Physics', 'y_data': 114576.9}, {'x_data': 'Finance', 'y_data': 105311.38}, {'x_data': 'Pol. Sci.', 'y_data': 100053.07333333332}, {'x_data': 'Geology', 'y_data': 99382.59}, {'x_data': 'Comp. Sci.', 'y_data': 98133.47}, {'x_data': 'Cybernetics', 'y_data': 96346.5675}, {'x_data': 'Marketing', 'y_data': 84097.4375}, {'x_data': 'Mech. Eng.', 'y_data': 79813.02}, {'x_data': 'Astronomy', 'y_data': 79070.08}, {'x_data': 'Athletics', 'y_data': 77098.198}, {'x_data': 'Elec. Eng.', 'y_data': 74162.73999999999}, {'x_data': 'English', 'y_data': 72089.04999999999}, {'x_data': 'Statistics', 'y_data': 67795.44166666668}, {'x_data': 'Biology', 'y_data': 61287.25}, {'x_data': 'Psychology', 'y_data': 61143.05}, {'x_data': 'Languages', 'y_data': 57421.85666666668}, {'x_data': 'Accounting', 'y_data': 48716.5925}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'dept_name', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'AVG(salary)'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>

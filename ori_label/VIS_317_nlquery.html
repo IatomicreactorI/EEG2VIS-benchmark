@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">Show the number of addrens history for each customer in a bar chart, rank in asc by the bar.</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT T2.customer_name , COUNT(T2.customer_name) FROM customer_address_history AS T1 JOIN customers AS T2 ON T1.customer_id = T2.customer_id JOIN addresses AS T3 ON T1.address_id = T3.address_id GROUP BY T2.customer_name ORDER BY T2.customer_name ASC</p> -->

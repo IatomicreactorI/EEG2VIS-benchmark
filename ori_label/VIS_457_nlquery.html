@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NL Query</title>
+<!-- 引入外部的 controls.js 文件 -->
+<script src="controls.js"></script>
+<style>
+        .container {
+            margin-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .nlquery {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">For those employees who did not have any job in the past, give me the comparison about the sum of manager_id over the job_id , and group by attribute job_id by a bar chart, sort Y-axis in descending order please.</div>
+</body>
+</html>
+<!-- <h4>VIS Query: </h4><p>Visualize BAR SELECT JOB_ID , SUM(MANAGER_ID) FROM employees WHERE employee_id NOT IN (SELECT employee_id FROM job_history) GROUP BY JOB_ID ORDER BY SUM(MANAGER_ID) DESC</p> -->

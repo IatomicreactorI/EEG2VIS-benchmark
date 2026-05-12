@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS Visualization</title>
+    <!-- 引入 Vega、Vega-Lite 和 Vega-Embed 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <!-- 引入外部的 controls.js 文件 -->
+    <script src="controls.js"></script>
+    <style>
+        .vega-actions a {
+            margin-right: 5px;
+        }
+        .vis-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis1" class="vis-container"></div>
+    <script>
+        var vlSpec1  = {'data': {'values': [{'x_data': 4260, 'y_data': 1909}, {'x_data': 4220, 'y_data': 350}, {'x_data': 4195, 'y_data': 1605}, {'x_data': 4193, 'y_data': 1215}, {'x_data': 4167, 'y_data': 3755}, {'x_data': 4127, 'y_data': 1530}, {'x_data': 4125, 'y_data': 660}, {'x_data': 4120, 'y_data': 1510}, {'x_data': 4100, 'y_data': 2225}, {'x_data': 4088, 'y_data': 420}, {'x_data': 4071, 'y_data': 610}, {'x_data': 4070, 'y_data': 3931}, {'x_data': 4070, 'y_data': 500}, {'x_data': 4068, 'y_data': 1904}, {'x_data': 4030, 'y_data': 420}, {'x_data': 3996, 'y_data': 910}, {'x_data': 3950, 'y_data': 500}, {'x_data': 3941, 'y_data': 1540}, {'x_data': 3912, 'y_data': 460}, {'x_data': 3903, 'y_data': 450}, {'x_data': 3900, 'y_data': 590}]}, 'mark': 'point', 'encoding': {'x': {'field': 'x_data', 'type': 'quantitative', 'title': 'Height'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'Prominence'}}}
+        vegaEmbed('#vis1', vlSpec1).catch(console.error);
+    </script>
+</body>
+</html>
