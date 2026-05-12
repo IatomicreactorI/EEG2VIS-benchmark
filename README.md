@@ -47,13 +47,48 @@ Each trial is a dictionary with the following keys:
 
 **Dimensions**: `(channels, time_points)` — 31 EEG channels × 3000 time points (15 seconds at 200 Hz).
 
+## Repository Structure
+
+```
+EEG2VIS-benchmark/
+├── data/                            # Preprocessed EEG data (Git LFS)
+│   ├── test001_preprocessed_trials.npz
+│   ├── test002_preprocessed_trials.npz
+│   └── ...                          # 162 subjects total
+├── ori_label/                       # Original experiment stimulus materials
+│   ├── VIS_{XXXX}_table.html        # Data table shown to participants
+│   ├── VIS_{XXXX}_nlquery.html      # Natural language query
+│   ├── VIS_{XXXX}_chart.html        # Vega-Lite visualization (bar/line/pie chart)
+│   ├── controls.js                  # Page navigation control script
+│   ├── eeg_marker1008.py            # EEG event marker sending script
+│   └── README.txt                   # Data provenance notes
+├── explore_data.py                  # Data exploration script
+└── README.md
+```
+
+### `data/` — Preprocessed EEG Signals
+
+Contains 162 `.npz` files, one per subject. Each file stores trial-segmented EEG data across three cognitive phases (table → query → vis), with 31 channels at 200 Hz, padded/cropped to 3000 time points (15 s) per phase. See [Data Structure](#data-structure) above for details.
+
+### `ori_label/` — Experiment Stimulus Materials
+
+Contains 3600 sets of stimulus materials (VIS_1 ~ VIS_3600), each consisting of three HTML files:
+
+| File | Content |
+|---|---|
+| `VIS_{XXXX}_table.html` | The **data table** presented to participants during the table-viewing phase |
+| `VIS_{XXXX}_nlquery.html` | The **natural language query** participants read during the query-reading phase |
+| `VIS_{XXXX}_chart.html` | The **visualization chart** (Vega-Lite) displayed during the visualization-viewing phase |
+
+These materials serve as the ground-truth labels for linking EEG signals to specific visual stimuli. Users can parse the HTML files to extract structured information (e.g., table content, query text, Vega-Lite spec) for their own modeling pipelines.
+
 ## Quick Start
 
 ```python
 import numpy as np
 
 # Load one subject
-data = np.load("test001_preprocessed_trials.npz", allow_pickle=True)
+data = np.load("data/test001_preprocessed_trials.npz", allow_pickle=True)
 info = data["info"].item()
 trials = data["trials"]
 
@@ -66,4 +101,18 @@ print(f"Vis phase EEG shape: {eeg_vis.shape}")
 
 ## License
 
-Please refer to the original dataset license and cite accordingly.
+This dataset is released under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+
+- You are free to share and adapt the data for **non-commercial** purposes.
+- You must give appropriate credit and indicate any changes made.
+
+If you use this dataset in your research, please cite:
+
+```bibtex
+@misc{eeg2vis2025,
+  title     = {EEG2VIS Benchmark: EEG-based Visualization Comprehension Dataset},
+  author    = {Shi Yao},
+  year      = {2025},
+  url       = {https://github.com/IatomicreactorI/EEG2VIS-benchmark}
+}
+```
